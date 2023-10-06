@@ -17,12 +17,17 @@ public class Task5 {
         System.out.print("Введите число: ");
         if (scanner.hasNextInt()) {
             num = scanner.nextInt();
-            for (int i = 1; i <= num; i++) {
-                sum = sum + i;
+            if(num > 0) {
+                for (int i = 1; i <= num; i++) {
+                    sum = sum + i;
+                }
+            } else {
+                System.out.println("Число должно быть положительным. Попробуй снова");
+                return;
             }
             System.out.println("Сумма всех чисел: " + sum);
         } else {
-            System.out.println("Введено неверное число. Попробуй снова");
+            System.out.println("Некорректный ввод. Попробуй снова");
         }
     }
 }
