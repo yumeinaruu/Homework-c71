@@ -1,8 +1,9 @@
 package Homework4;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Task4 {
+public class Task5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите длину массива: ");
@@ -24,17 +25,14 @@ public class Task4 {
             return;
         }
 
-        int count = 0;
-        for (int i = 0; i < len; i++){
-            if(nums[i]==0){
-                count++;
-            }
+        int temp = 0;
+        for (int i = 0; i < len; i++) {
+            temp = nums[i];
+            nums[i] = nums[(len - 1) - i];
+            nums[(len - 1) - i] = temp;
         }
-
-        if(count != 0){
-            System.out.println("Количество нулевых элементов: " + count);
-        } else{
-            System.out.println("Нулевых элементов нет");
+        for (int i = 0; i < len; i++) {
+            System.out.println(nums[i]);
         }
     }
 }
