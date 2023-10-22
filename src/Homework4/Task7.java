@@ -3,7 +3,7 @@ package Homework4;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Task5 {
+public class Task7 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите длину массива: ");
@@ -13,7 +13,7 @@ public class Task5 {
         int choice = scanner.nextInt();
         if (choice == 1) {
             for (int i = 0; i < len; i++) {
-                System.out.println("Введите " + (i + 1) + "-ое число: ");
+                System.out.println("Введите " + (i + 1) + "-ое число от 0 до 9: ");
                 nums[i] = scanner.nextInt();
             }
         } else if (choice == 2) {
@@ -25,13 +25,17 @@ public class Task5 {
             return;
         }
 
-        System.out.println(Arrays.toString(nums));
-        int temp = 0;
-        for (int i = 0; i < (len / 2); i++) {
-            temp = nums[i];
-            nums[i] = nums[(len - 1) - i];
-            nums[(len - 1) - i] = temp;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (nums[i] != 9) {
+                nums[i] += 1;
+                System.out.println(Arrays.toString(nums));
+                System.exit(1);
+            } else if (nums[i] == 9 && i != 0) {
+                nums[i] = 0;
+            }
         }
-        System.out.println(Arrays.toString(nums));
+        int[] numsNew = new int[nums.length + 1];
+        numsNew[0] = 1;
+        System.out.println(Arrays.toString(numsNew));
     }
 }

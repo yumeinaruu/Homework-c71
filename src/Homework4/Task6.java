@@ -3,7 +3,7 @@ package Homework4;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Task5 {
+public class Task6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите длину массива: ");
@@ -24,14 +24,14 @@ public class Task5 {
             System.out.println("Введите 1 или 2");
             return;
         }
-
         System.out.println(Arrays.toString(nums));
-        int temp = 0;
-        for (int i = 0; i < (len / 2); i++) {
-            temp = nums[i];
-            nums[i] = nums[(len - 1) - i];
-            nums[(len - 1) - i] = temp;
+        for(int i = 0; i < (nums.length-1); i++){
+            if(nums[i+1] < nums[i]){
+                System.out.println("Это не возрастающая последовательность");
+                System.exit(2);
+            } else if(i == nums.length - 2){
+                System.out.println("Это возрастающая последовательность");
+            }
         }
-        System.out.println(Arrays.toString(nums));
     }
 }

@@ -24,11 +24,29 @@ public class Task3 {
             System.out.println("Введите 1 или 2");
             return;
         }
+       // Arrays.sort(nums);
+        System.out.println(Arrays.toString(nums));
 
-        Arrays.sort(nums);
-        System.out.println("//////////////\nОтсортированный массив: " + Arrays.toString(nums) + "\n//////////////");
+       /* System.out.println("Максимальный элемент: " + nums[(len - 1)] + " Его индекс: " + (len - 1));
+        System.out.println("Минимальный элемент: " + nums[0] + " Его индекс: 0");*/
 
-        System.out.println("Максимальный элемент: " + nums[(len - 1)] + " Его индекс: " + (len - 1));
-        System.out.println("Минимальный элемент: " + nums[0] + " Его индекс: 0");
+        int tempMax = nums[0];
+        int tempMIn = nums[0];
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i]>=tempMax){
+                tempMax = nums[i];
+            }
+            if(nums[i]<=tempMIn){
+                tempMIn = nums[i];
+            }
+        }
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i]==tempMax){
+                System.out.println("Максимальный элемент: " + nums[i] + " с индексом: " + i);
+            }
+            if(nums[i]==tempMIn){
+                System.out.println("Минимальный элемент: " + nums[i] + " с индексом: " + i);
+            }
+        }
     }
 }
