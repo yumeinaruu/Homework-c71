@@ -33,6 +33,7 @@ public class Task7 {
             } else if (nums[i] == 9 && i != 0) {
                 nums[i] = 0;
             }
+
         }
         int[] numsNew = new int[nums.length + 1];
         numsNew[0] = 1;
