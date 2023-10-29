@@ -1,4 +1,4 @@
-package Homework7.Task2.with_static;
+package Homework8.Task2.with_static;
 
 import java.util.Objects;
 

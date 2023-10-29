@@ -1,4 +1,4 @@
-package Homework7.Task1;
+package Homework8.Task1;
 
 public abstract class Animal {
     public abstract void voice();
