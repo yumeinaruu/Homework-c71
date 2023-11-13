@@ -9,7 +9,7 @@ public class Task6 {
         String text = scanner.nextLine();
         String[] words = text.split(" ");
         System.out.println("Какое из слов вы хотите проверить на палиндром?");
-        int getWord = 0;
+        int getWord;
         while (true) {
             getWord = (scanner.nextInt() - 1);
             if (getWord >= words.length || getWord < 0) {
