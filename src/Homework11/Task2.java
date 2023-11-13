@@ -28,7 +28,7 @@ public class Task2 {
             }
         }
 
-        for(int i = 0; i < words.length; i++){
+        for (int i = 0; i < words.length; i++) {
             System.out.println(words[i]);
         }
     }

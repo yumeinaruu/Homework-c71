@@ -12,10 +12,10 @@ public class Task3 {
             words[i] = scanner.nextLine();
             average += words[i].length();
         }
-        average = (int) Math.round((double) average /2);
+        average = (int) Math.round((double) average / 2);
 
-        for(int i = 0; i < words.length; i++){
-            if(words[i].length() < average){
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() < average) {
                 System.out.println(words[i] + "\t" + words[i].length());
             }
         }
