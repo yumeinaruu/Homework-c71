@@ -19,7 +19,7 @@ public class Task6 {
             }
         }
         char[] wordsChars = words[getWord].toCharArray();
-        for (int i = words[getWord].length() - 1; i > words[getWord].length() / 2; ) {
+        for (int i = words[getWord].length() - 1; words[getWord].length() == 2 ? i >= words[getWord].length() / 2 : i > words[getWord].length() / 2; ) {
             for (int j = 0; j < words[getWord].length() / 2; j++) {
                 if (wordsChars[i] != wordsChars[j]) {
                     System.out.println("Это не палиндром");
