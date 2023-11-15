@@ -10,7 +10,7 @@ public class Task2 {
         String text3 = "1423-1512-51 +375294561234";
         String text4 = "teachmeskills@gmail.com +375294561234";
 
-        Pattern pattern = Pattern.compile("[1-9{4}\\-{2}1-9{2}][A-z\\+@a-z\\+.a-z\\+][+1-9{12}]");
+        Pattern pattern = Pattern.compile("[[[1-9]{4}-]{2}[1-9]{2}][A-z]+@[a-z]+.[a-z]+][+[1-9]{12}]");
         Matcher matcher = pattern.matcher(text1);
 
         while (matcher.find()){
