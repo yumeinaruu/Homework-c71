@@ -10,23 +10,27 @@ public class Task2 {
         String text3 = "1423-1512-51 +375294561234";
         String text4 = "teachmeskills@gmail.com +375294561234";
 
-        Pattern pattern = Pattern.compile("[[[1-9]{4}-]{2}[1-9]{2}][A-z]+@[a-z]+.[a-z]+][+[1-9]{12}]");
+        Pattern pattern = Pattern.compile("[+[\\d]{12}]");
         Matcher matcher = pattern.matcher(text1);
-
+        //[[A-z]@[a-z].[a-z]]
+        //[[A-z]{1,}@[a-z]{1,}.[a-z]{1,}][+[\d]{12}]
+        //[[\d{4}\-\d{4}-]\d{2}]
         while (matcher.find()){
-            System.out.println(matcher.group());
+            System.out.print(matcher.group());
         }
+        System.out.println();
         matcher = pattern.matcher(text2);
         while (matcher.find()){
-            System.out.println(matcher.group());
+            System.out.print(matcher.group());
         }
+        System.out.println();
         matcher = pattern.matcher(text3);
         while (matcher.find()){
-            System.out.println(matcher.group());
+            System.out.print(matcher.group());
         }
         matcher = pattern.matcher(text4);
         while (matcher.find()){
-            System.out.println(matcher.group());
+            System.out.print(matcher.group());
         }
     }
 }
