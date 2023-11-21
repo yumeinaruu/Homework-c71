@@ -33,6 +33,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "Объект создан";
+        return "Логин: " + login + "\nПароль: " + password;
     }
 }
