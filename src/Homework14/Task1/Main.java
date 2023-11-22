@@ -1,11 +1,7 @@
 package Homework14.Task1;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -17,22 +13,17 @@ public class Main {
             }
             stringBuilder = new StringBuilder(stringBuilder.toString().replaceAll("\\W+", " "));
             String[] text = stringBuilder.toString().split(" +");
-            for (int j = 0; j < text.length - 1; j++) {
-                int min = j;
-                for (int k = j + 1; k < text.length; k++) {
-                    if (text[min].length() > text[k].length()) {
-                        min = k;
+            int maxIndex = 0;
+            int minIndex = 0;
+                for(int k = 0; k < text.length - 1; k++){
+                    if(text[maxIndex].length() < text[k].length()){
+                        maxIndex = k;
+                    }
+                    if(text[minIndex].length() > text[k].length()){
+                        minIndex = k;
                     }
                 }
-
-                if (min != j) {
-                    String temp = text[j];
-                    text[j] = text[min];
-                    text[min] = temp;
-                }
-            }
-
-            System.out.println("Слово минимальной длины: " + text[0] + "\nСлово максимальной длины: " + text[text.length - 1]);
+            System.out.println("Слово минимальной длины: " + text[minIndex] + "\nСлово максимальной длины: " + text[maxIndex]);
         } catch (IOException e) {
             System.out.println(e);
         }
