@@ -19,8 +19,8 @@ public class Main {
             }
             String text = stringBuilder.toString();
             System.out.println(text);
-            Pattern pattern = Pattern.compile("[docnum][\\w]{15}[\\n]");
-            Pattern patternError = Pattern.compile("[^docnum][\\w]+");
+            Pattern pattern = Pattern.compile("docnum\\w{15}");
+            Pattern patternError = Pattern.compile("[^docnum]\\w+");
             Matcher matcher = pattern.matcher(text);
             Matcher matcherError = patternError.matcher(text);
             while (matcher.find()){
