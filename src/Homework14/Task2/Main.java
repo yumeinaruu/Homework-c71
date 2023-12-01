@@ -17,17 +17,13 @@ public class Main {
             while((k = fileReader.read()) != -1){
                 stringBuilder.append((char) k);
             }
-            String text = stringBuilder.toString();
-            System.out.println(text);
-            Pattern pattern = Pattern.compile("docnum\\w{15}");
-            Pattern patternError = Pattern.compile("[^docnum]\\w+");
-            Matcher matcher = pattern.matcher(text);
-            Matcher matcherError = patternError.matcher(text);
-            while (matcher.find()){
-                fileWriter.append(matcher.group());
-            }
-            while(matcherError.find()){
-                fileWriterError.append(matcherError.group());
+            String[] text = stringBuilder.toString().split("\n");
+            for(int i = 0; i < text.length; i++) {
+                if (text[i].matches("docnum\\w{15}") || text[i].matches("contract\\w{15}")) {
+                    fileWriter.write(text[i]);
+                } else {
+                    fileWriterError.write(text[i]);
+                }
             }
         } catch (FileNotFoundException e) {
             System.out.println(e);
