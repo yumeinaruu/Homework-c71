@@ -19,7 +19,7 @@ public class Main {
             }
             String[] text = stringBuilder.toString().split("\n");
             for(int i = 0; i < text.length; i++) {
-                if (text[i].matches("docnum\\w{15}") || text[i].matches("contract\\w{15}")) {
+                if (text[i].matches("[docnum\\w]{15}\\r") || text[i].matches("[contract\\w]{15}\\r")) {
                     fileWriter.write(text[i]);
                 } else {
                     fileWriterError.write(text[i]);
