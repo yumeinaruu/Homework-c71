@@ -9,35 +9,35 @@ public class MyArrayList<T> {
     private int s = 0;
 
     public MyArrayList() {
-        this.elementData = new Object[size];
+        elementData = new Object[size];
     }
 
     public MyArrayList(int size) {
-        this.elementData = new Object[size];
+        elementData = new Object[size];
     }
 
-    public void add(MyArrayList<T> myArrayList, T t) {
-        if (s == MyArrayList.elementData.length) {
-            MyArrayList.elementData = Arrays.copyOf(MyArrayList.elementData, elementData.length * 2);
-            MyArrayList.elementData[s] = t;
+    public void add(T t) {
+        if (s == elementData.length) {
+            elementData = Arrays.copyOf(elementData, elementData.length * 2);
+            elementData[s] = t;
             s++;
         } else {
-            MyArrayList.elementData[s] = t;
+            elementData[s] = t;
             s++;
         }
     }
 
-    public void remove(MyArrayList<T> myArrayList, int index) {
+    public void remove(int index) {
         for(int i = index; i < elementData.length - 1; i++){
             elementData[i] = elementData[i+1];
         }
     }
 
-    public T get(MyArrayList<T> myArrayList, int index) {
+    public T get(int index) {
         return (T) elementData[index];
     }
 
-    public boolean contains(MyArrayList<T> myArrayList, T container) {
+    public boolean contains(T container) {
         for (int i = 0; i < elementData.length; i++) {
             if (elementData[i] == container) {
                 return true;
@@ -46,7 +46,7 @@ public class MyArrayList<T> {
         return false;
     }
 
-    public void clean(MyArrayList<T> myArrayList) {
+    public void clean() {
         Arrays.fill(elementData, null);
     }
 
